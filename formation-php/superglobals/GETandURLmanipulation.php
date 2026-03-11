@@ -1,10 +1,10 @@
 <?php
-$products = ["Laptop", "Phone", "Tablet", "Apple", "Banana"];
+$products = ["Laptop", "Phone", "Tablet", "Apple", "Banana", "iphone 5", "iphone 17"];
 
 $cat = $_GET['category'] ?? '';
 
 if ($cat == 'tech') {
-    $products = ["Laptop", "Phone", "Tablet"];
+    $products = ["Laptop", "Phone", "Tablet", "iphone 5", "iphone 17"];
 } elseif ($cat == 'food') {
     $products = ["Apple", "Banana"];
 }
@@ -12,9 +12,9 @@ if ($cat == 'tech') {
 $sort = $_GET['sort'] ?? '';
 
 if ($sort == 'asc') {
-    sort($products); 
+    sort($products, SORT_STRING | SORT_NATURAL); 
 } elseif ($sort == 'desc') {
-    rsort($products); 
+    rsort($products, SORT_STRING | SORT_NATURAL); 
 }
 
 ?>
