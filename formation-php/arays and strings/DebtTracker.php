@@ -1,21 +1,24 @@
 <?php
 
-    // $friends =[
-    //     "friend1" => 10,
-    //     "friend2" => 10,
-    //     "friend3" => 10,
-    //     "friend4" => 10,
-    //     "friend5" => 10
-    //     ];
+    $friends = ["friend 1" => 50,
+                "friend 2" => 80,
+                "friend 3" => 500,
+                "friend 4" => 800,
+                "friend 5" => 50,
+                "friend 6" => 80,
+    ];
 
-    // foreach($friends as $name => $debt)
-    //     echo $name. " " .$debt. "\n";
-    // print_r($friends);
+    $totaldebt = 0;
 
-    $friends = ["ayoub", "younes", "yassine"];
+    foreach($friends as $name => $owed){
+        $totaldebt = $totaldebt + $owed;
 
-    $len = count($friends);
-    for ($index = 0; $index <= $len; $index++) { 
-        echo $friends[$index]. "\n";
+        if($owed > 100)
+            echo "<b>$name owes you a lot! <u> $owed DH </u></b><br>";
+        else
+            echo "$name owes you $owed DH <br>";
     }
+
+    echo "-----------------------<br>";
+    echo "Total money owed : $totaldebt DH <br>";
 ?>
