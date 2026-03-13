@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="margin-top: 20px; line-height: 1.6;">
+
 <?php
 
     $friends = ["friend 1" => 50,
@@ -14,7 +25,7 @@
         $totaldebt = $totaldebt + $owed;
 
         if($owed > 100)
-            echo "<b>$name owes you a lot! <u> $owed DH </u></b><br>";
+            echo "<b style='color: red;'> $name owes you <u> $owed DH </u></b><br>";
         else
             echo "$name owes you $owed DH <br>";
     }
@@ -22,3 +33,7 @@
     echo "-----------------------<br>";
     echo "Total money owed : $totaldebt DH <br>";
 ?>
+    </div>
+    
+</body>
+</html>

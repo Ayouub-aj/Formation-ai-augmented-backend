@@ -7,42 +7,39 @@
 </head>
 <body>
 
-<?php
-    $name = "";
-    $email = "";
-    $message = "";
-    $error = "";
-
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $message = $_POST["message"];
-
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            echo "Email ERROR!<br>";
-        }
-        else
-            echo "Form submitted successfully!<br>";
-    }
-
-?>
-<?php if ($error): ?>
-    <p style="color: red;"><?php echo $error; ?></p>
-<?php endif; ?>
 
 <form method = post action = "">
     <label><b> Name: </b></label>
-    <br>
-    <input type = "text" name = "name" <?php echo $name;?><br><br>
+    <input type = "text" name = "name" placeholder="enter your name" >
     <label><b> Email: </b></label>
-    <br>
-    <input type = "text" name = "email" <?php echo $email;?><br><br>
+    <input type = "text" name = "email" placeholder="enter your email">
     <label><b> Message: </b></label>
-    <br>
-    <input type = "text" name = "message" <?php echo $message;?>><br><br>
+    <input type = "text" name = "message" placeholder="enter a message">
 
-    <button type="submit">Send message</button>
+    <button type="submit">OK</button>
 </form>
+
+<div style="margin-top: 20px; line-height: 1.6;">
+
+<?php
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+        if(isset($_POST["name"]) && isset(($_POST["email"])) && $_POST["message"]){
+            echo $_POST["name"] ."<br>";
+            echo $_POST["email"] . "<br>";
+            echo $_POST["message"] . "<br><br>";
+
+            if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+                echo "<b style='color: red;'> Email ERROR!<b><br>";
+        }
+            else
+                echo "<b>Form submitted successfully! <br>";
+        }
+    }
+?>
+
+</div>
+
 
 </body>
 </html>
