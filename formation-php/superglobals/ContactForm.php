@@ -8,7 +8,8 @@
 <body>
 
 
-<form method = post action = "">
+<form method = post action = "" >
+
     <label><b> Name: </b></label>
     <input type = "text" name = "name" placeholder="enter your name" >
     <label><b> Email: </b></label>
@@ -33,7 +34,7 @@
                 echo "<b style='color: red;'> Email ERROR!<b><br>";
         }
             else
-                echo "<b>Form submitted successfully! <br>";
+                echo "<b style='color: green ;'>Form submitted successfully! <br>";
         }
     }
 ?>
