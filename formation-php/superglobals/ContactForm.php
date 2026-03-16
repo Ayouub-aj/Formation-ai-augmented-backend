@@ -11,11 +11,11 @@
 <form method = post action = "" >
 
     <label><b> Name: </b></label>
-    <input type = "text" name = "name" placeholder="enter your name" >
+    <input type = "text" name = "name" placeholder="enter your name" ><br>
     <label><b> Email: </b></label>
-    <input type = "text" name = "email" placeholder="enter your email">
+    <input type = "text" name = "email" placeholder="enter your email"><br><br>
     <label><b> Message: </b></label>
-    <input type = "text" name = "message" placeholder="enter a message">
+    <textarea type = "text" name = "message" placeholder="enter a message"></textarea>
 
     <button type="submit">OK</button>
 </form>
@@ -24,13 +24,16 @@
 
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $name = htmlspecialchars($_POST["name"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $message = htmlspecialchars($_POST["message"]);
+        
+        if(isset($name) && isset($email) && isset($message)){
+            echo $name ."<br>";
+            echo $email . "<br>";
+            echo $message . "<br><br>";
 
-        if(isset($_POST["name"]) && isset(($_POST["email"])) && $_POST["message"]){
-            echo $_POST["name"] ."<br>";
-            echo $_POST["email"] . "<br>";
-            echo $_POST["message"] . "<br><br>";
-
-            if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 echo "<b style='color: red;'> Email ERROR!<b><br>";
         }
             else
