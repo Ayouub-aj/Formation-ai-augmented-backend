@@ -17,7 +17,7 @@
     <label><b> Message: </b></label>
     <textarea type = "text" name = "message" placeholder="enter a message"></textarea>
 
-    <button type="submit">OK</button>
+    <button type="submit">OK</button>  
 </form>
 
 <div style="margin-top: 20px; line-height: 1.6;">
