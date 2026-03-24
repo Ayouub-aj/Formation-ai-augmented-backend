@@ -21,6 +21,6 @@ SELECT * FROM library_books WHERE NOT status = 'Lost' ORDER BY published_year DE
 
 SELECT DISTINCT (Author) FROM library_books;
 
---The Formatting: Show the book titles in UPPERCASE and the price rounded to the nearest whole number.
+--The Formatting: Show the book titles in UPPERCASE and the price rounded to the next whole number.
 
 SELECT UPPER(title) as title, ROUND(price) as price FROM library_books;
