@@ -7,6 +7,6 @@ CREATE TABLE library_books (
     price DECIMAL(10, 2)
 );
 
---  VERIFICATION QUERIES  (run this to check everything works)
+--  VERIFICATION QUERIES  (run this to see library_books table informations) 
 
 DESCRIBE library_books;
